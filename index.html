@@ -153,7 +153,7 @@
         const ubicacion = document.getElementById("ubicacion").value;
         const meli = document.getElementById("meli").value;
 
-        const texto = `Se realizó la auditoría a la Pick Up # ${pickup}, el día ${fecha}, en la cual al validar los Stock’s Audits generados por ${sexo} rep. ${nombre}, se detectó que el de la ubicación ${ubicacion} con la meli ${meli} físicamente si encontraba en la ubicación,por lo cual se considera un verdadero SA.`;
+        const texto = `Se realizó la auditoría a la Pick Up # ${pickup}, el día ${fecha}, en la cual al validar los Stock’s Audits generados por ${sexo} rep. ${nombre}, se detectó que el de la ubicación ${ubicacion} con la meli ${meli} físicamente no se encontraba en la ubicación,por lo cual se considera un verdadero SA.`;
 
         document.getElementById("textoGenerado").innerText = texto;
         document.getElementById("copiarTexto").style.display = "block";
