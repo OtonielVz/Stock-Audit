@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <!--BY Otoniel PalaciosVz-->
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="icon"
@@ -111,7 +110,7 @@
         <label for="sexo">Sexo:</label>
         <select id="sexo">
           <option value="él">Él</option>
-          <option value="la">Ella</option>
+          <option value="ella">Ella</option>
         </select>
 
         <label for="fecha">Fecha:</label>
@@ -130,13 +129,12 @@
         <input type="text" id="meli" />
 
         <button id="generarTexto">Generar Texto</button>
-        <button id="copiarTexto" style="display: none">Copiar Texto</button>
-        <button id="limpiar">Limpiar</button>
       </div>
 
       <div class="output-container">
         <h2>Texto Generado:</h2>
         <p id="textoGenerado"></p>
+        <button id="copiarTexto" style="display: none">Copiar Texto</button>
       </div>
     </div>
 
@@ -153,10 +151,10 @@
         const ubicacion = document.getElementById("ubicacion").value;
         const meli = document.getElementById("meli").value;
 
-        const texto = `Se realizó la auditoría a la Pick Up # ${pickup}, el día ${fecha}, en la cual al validar los Stock’s Audits generados por ${sexo} rep. ${nombre}, se detectó que el de la ubicación ${ubicacion} con la meli ${meli} físicamente no se encontraba en la ubicación,por lo cual se considera un verdadero SA.`;
+        const texto = `Se realizó la auditoría a la Pick Up # ${pickup}, el día ${fecha}, en la cual al validar los Stock’s Audits generados por ${sexo} rep. ${nombre}, se detectó que el de la ubicación ${ubicacion} con la meli ${meli} físicamente no se encontraba en la ubicación, por lo cual se considera un verdadero SA.`;
 
         document.getElementById("textoGenerado").innerText = texto;
-        document.getElementById("copiarTexto").style.display = "block";
+        document.getElementById("copiarTexto").style.display = "block"; // Mostrar botón al generar texto
       };
 
       document.getElementById("copiarTexto").onclick = function () {
@@ -172,17 +170,6 @@
             }, 500);
           }, 1500);
         });
-      };
-
-      document.getElementById("limpiar").onclick = function () {
-        document.getElementById("sexo").selectedIndex = 0;
-        document.getElementById("fecha").value = "";
-        document.getElementById("pickup").value = "";
-        document.getElementById("nombre").value = "";
-        document.getElementById("ubicacion").value = "";
-        document.getElementById("meli").value = "";
-        document.getElementById("textoGenerado").innerText = "";
-        document.getElementById("copiarTexto").style.display = "none";
       };
     </script>
   </body>
